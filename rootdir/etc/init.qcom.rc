@@ -294,10 +294,6 @@ on post-fs-data
     chmod 2770 /data/system/perfd
     mkdir /persist/drm 0770 system system
 
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
     # Sensor
     mkdir /persist/sensors 0770 system system
 
