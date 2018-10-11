@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VENDOR=huawei
-DEVICE=y6
+DEVICE=scale
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
@@ -129,7 +129,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),y6)
+ifeq (\$(TARGET_DEVICE),scale)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := com.qualcomm.location

@@ -17,7 +17,7 @@
 # Product-specific compile-time definitions.
 #
 
-LOCAL_PATH := device/huawei/y6
+LOCAL_PATH := device/huawei/scale
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := Honor4a,honor4a,Honor4A,honor4A,y6,Y6
@@ -70,7 +70,7 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := \
-    device/huawei/y6/cmhw
+    device/huawei/scale/cmhw
 
 # Enables CSVT
 TARGET_USES_CSVT := true
@@ -106,7 +106,7 @@ USE_OPENGL_RENDERER := true
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_y6.c
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_scale.c
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x80000000
@@ -158,7 +158,7 @@ PROTOBUF_SUPPORTED := true
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/huawei/y6/sepolicy
+    device/huawei/scale/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     bootanim.te \
@@ -204,7 +204,7 @@ TW_THEME := portrait_hdpi
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_DEVICE_DIRS += device/huawei/y6
+TARGET_RECOVERY_DEVICE_DIRS += device/huawei/scale
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_INCLUDE_CRYPTO := true
@@ -230,4 +230,4 @@ TARGET_KERNEL_MODULES +=  CORE_CTL_MODULE
 
 
 # inherit from the proprietary version
--include vendor/huawei/y6/BoardConfigVendor.mk
+-include vendor/huawei/scale/BoardConfigVendor.mk
