@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/common/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -24,47 +24,47 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/common/media/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/common/media/media_codecs.xml:system/etc/media_codecs.xml
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/common/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/common/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/common/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Audio calibration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/Bluetooth_cal.acdb:system/etc/Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/audio/General_cal.acdb:system/etc/General_cal.acdb \
-    $(LOCAL_PATH)/audio/Global_cal.acdb:system/etc/Global_cal.acdb \
-    $(LOCAL_PATH)/audio/Handset_cal.acdb:system/etc/Handset_cal.acdb \
-    $(LOCAL_PATH)/audio/Hdmi_cal.acdb:system/etc/Hdmi_cal.acdb \
-    $(LOCAL_PATH)/audio/Headset_cal.acdb:system/etc/Headset_cal.acdb \
-    $(LOCAL_PATH)/audio/Speaker_cal.acdb:system/etc/Speaker_cal.acdb \
-    $(LOCAL_PATH)/audio/libacdb-fts.so:system/vendor/lib/libacdb-fts.so \
-    $(LOCAL_PATH)/audio/libacdbloader.so:system/vendor/lib/libacdbloader.so \
-    $(LOCAL_PATH)/audio/libacdbmapper.so:system/vendor/lib/libacdbmapper.so \
-    $(LOCAL_PATH)/audio/libacdbrtac.so:system/vendor/lib/libacdbrtac.so
+    $(LOCAL_PATH)/common/audio/Bluetooth_cal.acdb:system/etc/Bluetooth_cal.acdb \
+    $(LOCAL_PATH)/common/audio/General_cal.acdb:system/etc/General_cal.acdb \
+    $(LOCAL_PATH)/common/audio/Global_cal.acdb:system/etc/Global_cal.acdb \
+    $(LOCAL_PATH)/common/audio/Handset_cal.acdb:system/etc/Handset_cal.acdb \
+    $(LOCAL_PATH)/common/audio/Hdmi_cal.acdb:system/etc/Hdmi_cal.acdb \
+    $(LOCAL_PATH)/common/audio/Headset_cal.acdb:system/etc/Headset_cal.acdb \
+    $(LOCAL_PATH)/common/audio/Speaker_cal.acdb:system/etc/Speaker_cal.acdb \
+    $(LOCAL_PATH)/common/audio/libacdb-fts.so:system/vendor/lib/libacdb-fts.so \
+    $(LOCAL_PATH)/common/audio/libacdbloader.so:system/vendor/lib/libacdbloader.so \
+    $(LOCAL_PATH)/common/audio/libacdbmapper.so:system/vendor/lib/libacdbmapper.so \
+    $(LOCAL_PATH)/common/audio/libacdbrtac.so:system/vendor/lib/libacdbrtac.so
 
 # Huawei sensors fix
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sensors/sensors.msm8909.so:system/lib/hw/sensors.msm8909.so
+    $(LOCAL_PATH)/common/sensors/sensors.msm8909.so:system/lib/hw/sensors.msm8909.so
 
 # Libcutilz
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/sensors/libcutilz.so:system/lib/libcutilz.so
+     $(LOCAL_PATH)/common/sensors/libcutilz.so:system/lib/libcutilz.so
 
 #Twrp fstab
 PRODUCT_COPY_FILES += \
-$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
+$(LOCAL_PATH)/common/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Huawei sim files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/operator/libqmi_nv_api.so:system/lib/libqmi_nv_api.so \
-    $(LOCAL_PATH)/operator/libqmi_oem_api.so:system/lib/libqmi_oem_api.so \
+    $(LOCAL_PATH)/common/operator/libqmi_nv_api.so:system/lib/libqmi_nv_api.so \
+    $(LOCAL_PATH)/common/operator/libqmi_oem_api.so:system/lib/libqmi_oem_api.so \
 
-# Feature definition files for msm8909
+# Feature definition fies for msm8909
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -93,25 +93,25 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/common/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # gps/location secuity configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/common/sec_config:system/etc/sec_config
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
-    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
+    $(LOCAL_PATH)/common/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/common/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/common/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/common/gps/quipc.conf:system/etc/quipc.conf \
+    $(LOCAL_PATH)/common/gps/sap.conf:system/etc/sap.conf
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/WCNSS_wlan_dictionary.dat:system/etc/wifi/WCNSS_wlan_dictionary.dat \
-    $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/common/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/common/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/common/WCNSS_wlan_dictionary.dat:system/etc/wifi/WCNSS_wlan_dictionary.dat \
+    $(LOCAL_PATH)/common/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
