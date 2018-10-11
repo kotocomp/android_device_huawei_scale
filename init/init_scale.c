@@ -1,6 +1,5 @@
 /*
    Copyright (c) 2014, The Linux Foundation. All rights reserved.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -58,114 +56,188 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         if (strstr(model, "huawei_fac_product_name") != NULL)
             break;
 
-    /* C8817D */
-    if (strstr(model, "C8817D") != NULL) {
-        property_set("ro.product.model", "C8817D");
-        property_set("ro.product.name", "C8817D");
-        property_set("ro.product.device", "C8817D");
-        property_set("ro.build.product", "C8817D");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.dsds.enabled", "true");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.config.is_cdma_phone", "true");
-        property_set("ro.cdma.home.operator.numeric", "46003");
-        property_set("ro.config.cdma.globalMode", "true");
-        property_set("ro.config.dsds_mode", "cdma_gsm");
-        property_set("ro.com.android.dataroaming","true");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "C8817D-user 4.4.4 GRJ90 C92B381 release-keys");
-        property_set("ro.build.fingerprint", "Huawei/C8817D/hwC8817D:4.4.4/HuaweiC8817D/C92B381:user/release-keys");
-    }
-    /* C8817E */
-    else if (strstr(model, "C8817E") != NULL) {
-        property_set("ro.product.model", "HUAWEI C8817E");
-        property_set("ro.product.name", "C8817E");
-        property_set("ro.product.device", "C8817E");
-        property_set("ro.build.product", "C8817E");
-        property_set("ro.build.description", "C8817E-user 4.4.4 GRJ90 C92B380 release-keys");
-        property_set("ro.build.fingerprint", "Huawei/C8817E/hwC8817E:4.4.4/HuaweiC8817E/C92B380:user/release-keys");
-    }
-    /* G621-TL00 */
-    else if (strstr(model, "G621-TL00") != NULL) {
-        property_set("ro.product.model", "G621-TL00");
-        property_set("ro.product.name", "G621-TL00");
-        property_set("ro.product.device", "G621-TL00");
-        property_set("ro.build.product", "G621-TL00");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.dsds.enabled", "true");
+ /* SCL-AL00 */
+    if (buf.find("SCL-AL00") != std::string::npos) {
+        property_override("ro.product.model", "SCL-AL00");
+        property_override("ro.product.device", "SCL-AL00");
+        property_override("ro.build.product", "SCL-AL00");
         property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "G621-TL00-user 4.4.4 GRJ90 C01B361SP01 release-keys");
-        property_set("ro.build.fingerprint", "Honor/G621-TL00/hwG621-TL00:4.4.4/HonorG621-TL00/C01B361SP01:user/release-keys");
-    }
-    /* G620S-UL00 */
-    else if (strstr(model, "G620S-UL") != NULL) {
-        property_set("ro.product.model", "G620S-UL00");
-        property_set("ro.product.name", "G620S-UL00");
-        property_set("ro.product.device", "G620S-UL00");
-        property_set("ro.build.product", "G620S-UL00");
-        property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-AL00-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-AL00/hwSCL-Q:5.1/HuaweiSCL-AL00/C432B150:user/release-keys");
+    }
+    /* SCL-CL00 */
+    if (buf.find("SCL-CL00") != std::string::npos) {
+        property_override("ro.product.model", "SCL-CL00");
+        property_override("ro.product.device", "SCL-CL00");
+        property_override("ro.build.product", "SCL-CL00");
         property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "G620S-UL00-user 4.4.4 GRJ90 C17B246 release-keys");
-        property_set("ro.build.fingerprint", "Huawei/G620S-UL00/hwG620S-UL00:4.4.4/HuaweiG620S-UL00/C17B246:user/release-keys");
-    }
-    /* G620S-L01 */
-    else if (strstr(model, "G620S-L01") != NULL) {
-        property_set("ro.product.model", "G620S-L01");
-        property_set("ro.product.name", "G620S-L01");
-        property_set("ro.product.device", "G620S-L01");
-        property_set("ro.build.product", "G620S-L01");
-        property_set("ro.build.description", "G620S-L01-user 4.4.4 GRJ90 C00B380 release-keys");
-        property_set("ro.build.fingerprint", "Huawei/G620S-L01/hwG620S-L01:4.4.4/HuaweiG620S-L01/C00B380:user/release-keys");
-    }
-    /* Che1-CL20 */
-    else if (strstr(model, "Che1-CL20") != NULL) {
-        property_set("ro.product.model", "Che1-CL20");
-        property_set("ro.product.name", "4x");
-        property_set("ro.product.device", "Che1-CL20");
-        property_set("ro.build.product", "Che1-CL20");
-        property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.dsds.enabled", "true");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.cdma.home.operator.numeric", "46003");
-        property_set("ro.config.cdma.globalMode", "true");
-        property_set("ro.config.dsds_mode", "cdma_gsm");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "Che1-CL20-user 4.4.4 GRJ90 C00B275 release-keys");
-        property_set("ro.build.fingerprint", "Honor/Che1-CL20/Che1:4.4.4/Che1-CL20/C00B275:user/ota-rel-keys,release-keys");
-    }
-    /* Che1-CL10 */
-    else if (strstr(model, "Che1-CL10") != NULL) {
-        property_set("ro.product.model", "Che1-CL10");
-        property_set("ro.product.name", "Che1-CL10");
-        property_set("ro.product.device", "Che1-CL10");
-        property_set("ro.build.product", "Che1-CL10");
         property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.dsds.enabled", "true");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.cdma.home.operator.numeric", "46003");
-        property_set("ro.config.cdma.globalMode", "true");
-        property_set("ro.config.dsds_mode", "cdma_gsm");
-        property_set("ro.com.android.dataroaming","true");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "Che1-CL10-user 4.4.4 GRJ90 C92B275 release-keys");
-        property_set("ro.build.fingerprint", "Honor/Che1-CL10/Che1:4.4.4/Che1-CL10/C92B275:user/ota-rel-keys,release-keys");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-CL00-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-CL00/hwSCL-Q:5.1/HuaweiSCL-CL00/C432B150:user/release-keys");
     }
-    /* Che1-L04 */
-    else if (strstr(model, "Che1-L04") != NULL) {
-        property_set("ro.product.model", "Che1-L04");
-        property_set("ro.product.name", "Che1-L04");
-        property_set("ro.product.device", "Che1-L04");
-        property_set("ro.build.product", "Che1-L04");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.dsds.enabled", "true");
-        property_set("telephony.lteOnCdmaDevice", "1");
+    /* SCL-L01 */
+    if (buf.find("SCL-L01") != std::string::npos) {
+        property_override("ro.product.model", "SCL-L01");
+        property_override("ro.product.device", "SCL-L01");
+        property_override("ro.build.product", "SCL-L01");
+        property_set("ro.build.description", "SCL-L01-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-L01/hwSCL-Q:5.1/HuaweiSCL-L01/C432B150:user/release-keys");
+    }
+    /* SCL-L02 */
+    if (buf.find("SCL-L02") != std::string::npos) {
+        property_override("ro.product.model", "SCL-L02");
+        property_override("ro.product.device", "SCL-L02");
+        property_override("ro.build.product", "SCL-L02");
+        property_set("ro.build.description", "SCL-L02-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-L02/hwSCL-Q:5.1/HuaweiSCL-L02/C432B150:user/release-keys");
+    }
+    /* SCL-L03 */
+    if (buf.find("SCL-L03") != std::string::npos) {
+        property_override("ro.product.model", "SCL-L03");
+        property_override("ro.product.device", "SCL-L03");
+        property_override("ro.build.product", "SCL-L03");
+        property_set("ro.build.description", "SCL-L03-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-L03/hwSCL-Q:5.1/HuaweiSCL-L03/C432B150:user/release-keys");
+    }
+    /* SCL-L04 */
+    if (buf.find("SCL-L04") != std::string::npos) {
+        property_override("ro.product.model", "SCL-L04");
+        property_override("ro.product.device", "SCL-L04");
+        property_override("ro.build.product", "SCL-L04");
+        property_set("ro.build.description", "SCL-L04-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-L04/hwSCL-Q:5.1/HuaweiSCL-L04/C432B150:user/release-keys");
+    }
+    /* SCL-L21 */
+    if (buf.find("SCL-L21") != std::string::npos) {
+        property_override("ro.product.model", "SCL-L21");
+        property_override("ro.product.device", "SCL-L21");
+        property_override("ro.build.product", "SCL-L21");
         property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("ro.com.android.dataroaming","true");
-        property_set("ro.ril.multi_rat_capable","true");
-        property_set("ro.build.description", "Che1-L04-user 4.4.4 GRJ90 C900B130 release-keys");
-        property_set("ro.build.fingerprint", "Honor/Che1-L04/Che1:4.4.4/Che1-L04/C900B130:user/ota-rel-keys,release-keys");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-L21-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-L21/hwSCL-Q:5.1/HuaweiSCL-L21/C432B150:user/release-keys");
+    }
+    /* SCL-TL00 */
+    if (buf.find("SCL-TL00") != std::string::npos) {
+        property_override("ro.product.model", "SCL-TL00");
+        property_override("ro.product.device", "SCL-TL00");
+        property_override("ro.build.product", "SCL-TL00");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-TL00-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-TL00/hwSCL-Q:5.1/HuaweiSCL-TL00/C432B150:user/release-keys");
+    }
+    /* SCL-TL10 */
+    if (buf.find("SCL-TL10") != std::string::npos) {
+        property_override("ro.product.model", "SCL-TL10");
+        property_override("ro.product.device", "SCL-TL10");
+        property_override("ro.build.product", "SCL-TL10");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-TL10-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-TL10/hwSCL-Q:5.1/HuaweiSCL-TL10/C432B150:user/release-keys");
+    }
+    /* SCL-U03 */
+    if (buf.find("SCL-U03") != std::string::npos) {
+        property_override("ro.product.model", "SCL-U03");
+        property_override("ro.product.device", "SCL-U03");
+        property_override("ro.build.product", "SCL-U03");
+        property_set("ro.build.description", "SCL-U03-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-U03/hwSCL-Q:5.1/HuaweiSCL-U03/C432B150:user/release-keys");
+    }
+    /* SCL-U21 */
+    if (buf.find("SCL-U21") != std::string::npos) {
+        property_override("ro.product.model", "SCL-U21");
+        property_override("ro.product.device", "SCL-U21");
+        property_override("ro.build.product", "SCL-U21");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-U21-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-U21/hwSCL-Q:5.1/HuaweiSCL-U21/C432B150:user/release-keys");
+    }
+    /* SCL-U23 */
+    if (buf.find("SCL-U23") != std::string::npos) {
+        property_override("ro.product.model", "SCL-U23");
+        property_override("ro.product.device", "SCL-U23");
+        property_override("ro.build.product", "SCL-U23");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-U23-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-U23/hwSCL-Q:5.1/HuaweiSCL-U23/C432B150:user/release-keys");
+    }
+    /* SCL-U31 */
+    if (buf.find("SCL-U31") != std::string::npos) {
+        property_override("ro.product.model", "SCL-U31");
+        property_override("ro.product.device", "SCL-U31");
+        property_override("ro.build.product", "SCL-U31");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCL-U31-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCL-U31/hwSCL-Q:5.1/HuaweiSCL-U31/C432B150:user/release-keys");
+    }
+    /* SCC-U21 */
+    if (buf.find("SCC-U21") != std::string::npos) {
+        property_override("ro.product.model", "SCC-U21");
+        property_override("ro.product.device", "SCC-U21");
+        property_override("ro.build.product", "SCC-U21");
+        property_set("ro.config.dsds_mode", "umts_gsm");
+        property_set("persist.dsds.enabled", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.ril.config", "simactivation");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("ro.multi.rild", "true");
+        property_set("ro.config.hw_showSimName", "true");
+        property_set("ro.dual.sim.phone", "true");
+        property_set("ro.build.description", "SCC-U21-user 5.1 GRJ90 C432B150 release-keys");
+        property_set("ro.build.fingerprint", "Huawei/SCC-U21/hwSCL-Q:5.1/HuaweiSCC-U21/C432B150:user/release-keys");
     }
 }
