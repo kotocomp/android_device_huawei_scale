@@ -17,7 +17,7 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/common/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # media_profiles and media_codecs xmls for 8909
 PRODUCT_COPY_FILES += \
